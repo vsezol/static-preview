@@ -1,0 +1,35 @@
+<p>base usage</p>
+<pupa-select class="select" [placeholder]="'Placeholder'" [isMultiSelectionEnabled]="false" [formControl]="control">
+  <pupa-select-trigger>
+    {{ control.value }}
+  </pupa-select-trigger>
+
+  <pupa-select-dropdown>
+    <pupa-select-options-container>
+      <pupa-select-option *ngFor="let index of [1, 2, 3, 4, 5]" value="Option {{ index }}" [hasCheckbox]="true">
+        Option {{ index }}
+      </pupa-select-option>
+    </pupa-select-options-container>
+  </pupa-select-dropdown>
+</pupa-select>
+
+<p>with icon</p>
+<pupa-select
+  class="select"
+  [placeholder]="'Placeholder'"
+  [isMultiSelectionEnabled]="false"
+  [formControl]="controlWithIcon"
+>
+  <pupa-select-trigger>
+    {{ controlWithIcon.value }}
+  </pupa-select-trigger>
+
+  <pupa-select-dropdown>
+    <pupa-select-options-container>
+      <pupa-select-option *ngFor="let index of [1, 2, 3, 4, 5]" value="Option {{ index }}" [hasCheckbox]="true">
+        <pupa-icon name="app-cube"></pupa-icon>
+        Option {{ index }}
+      </pupa-select-option>
+    </pupa-select-options-container>
+  </pupa-select-dropdown>
+</pupa-select>

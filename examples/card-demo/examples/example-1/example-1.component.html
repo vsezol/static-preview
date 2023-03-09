@@ -1,0 +1,16 @@
+<div class="container">
+  <pupa-card *ngFor="let card of largeCards" [disabled]="card.disabled" [clickable]="card.clickable" size="large">
+    <pupa-card-cover>
+      <pupa-icon-holder size="large">
+        <pupa-icon class="icon" name="app-cube"></pupa-icon>
+      </pupa-icon-holder>
+    </pupa-card-cover>
+    <pupa-card-header>
+      <pupa-card-title [maxRows]="2">{{ card.title }}</pupa-card-title>
+      <pupa-card-description>{{ card.description }}</pupa-card-description>
+    </pupa-card-header>
+    <pupa-card-action>
+      <pupa-button-icon kind="secondary" icon="app-more" [disabled]="card.disabled"></pupa-button-icon>
+    </pupa-card-action>
+  </pupa-card>
+</div>

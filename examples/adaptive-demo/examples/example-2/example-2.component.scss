@@ -1,0 +1,26 @@
+@use 'mixins' as *;
+@use 'functions' as *;
+
+.block {
+  display: block;
+  width: 100px;
+  height: 100px;
+  background-color: color(primary-500);
+
+  @include width-less-than($width: 900) {
+    border-radius: 50%;
+  }
+
+  @include width-more-than($width: 1500) {
+    width: 200px;
+    height: 200px;
+  }
+
+  @include height-less-than($height: 900) {
+    background-color: color(danger-600);
+  }
+
+  @include height-more-than($height: 1000) {
+    background: linear-gradient(90deg, color(primary-500) 0%, color(primary-400) 35%, color(danger-500) 100%);
+  }
+}

@@ -1,0 +1,11 @@
+.button-container {
+  display: flex;
+  align-items: flex-end;
+  margin: 2rem 0;
+  flex-wrap: wrap;
+}
+
+.button-container__item {
+  display: inline-block;
+  margin: 2rem;
+}

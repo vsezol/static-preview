@@ -1,0 +1,76 @@
+<p>Base use of error tooltip</p>
+<pupa-select
+  class="select"
+  [placeholder]="'Placeholder'"
+  [isMultiSelectionEnabled]="true"
+  [withReset]="true"
+  [invalidTooltip]="'Required filed'"
+  [isPatched]="true"
+  [formControl]="control1"
+>
+  <pupa-select-trigger-tags class="trigger" [tags]="control1.value"></pupa-select-trigger-tags>
+
+  <pupa-select-dropdown>
+    <pupa-select-options-container>
+      <pupa-scrollable class="scrollable">
+        <pupa-select-option *ngFor="let option of options" [value]="option">
+          <pupa-tag [clickable]="true">{{ option }}</pupa-tag>
+        </pupa-select-option>
+      </pupa-scrollable>
+    </pupa-select-options-container>
+  </pupa-select-dropdown>
+</pupa-select>
+
+<p>Custom template of error tooltip</p>
+<pupa-select
+  class="select"
+  [placeholder]="'Placeholder'"
+  [isMultiSelectionEnabled]="true"
+  [withReset]="true"
+  [invalidTooltipContentTemplate]="errorMessageTemplate"
+  [isPatched]="true"
+  [formControl]="control2"
+>
+  <pupa-select-trigger-tags class="trigger" [tags]="control2.value"></pupa-select-trigger-tags>
+
+  <pupa-select-dropdown>
+    <pupa-select-options-container>
+      <pupa-scrollable class="scrollable">
+        <pupa-select-option *ngFor="let option of options" [value]="option">
+          <pupa-tag [clickable]="true">{{ option }}</pupa-tag>
+        </pupa-select-option>
+      </pupa-scrollable>
+    </pupa-select-options-container>
+  </pupa-select-dropdown>
+</pupa-select>
+
+<p>Error tooltip disabled</p>
+<pupa-select
+  class="select"
+  [placeholder]="'Placeholder'"
+  [isMultiSelectionEnabled]="true"
+  [withReset]="true"
+  [invalidTooltip]="'Required filed'"
+  [invalidTooltipDisabled]="true"
+  [isPatched]="true"
+  [formControl]="control3"
+>
+  <pupa-select-trigger-tags class="trigger" [tags]="control3.value"></pupa-select-trigger-tags>
+
+  <pupa-select-dropdown>
+    <pupa-select-options-container>
+      <pupa-scrollable class="scrollable">
+        <pupa-select-option *ngFor="let option of options" [value]="option">
+          <pupa-tag [clickable]="true">{{ option }}</pupa-tag>
+        </pupa-select-option>
+      </pupa-scrollable>
+    </pupa-select-options-container>
+  </pupa-select-dropdown>
+</pupa-select>
+
+<ng-template #errorMessageTemplate>
+  <div class="error">
+    <pupa-spinner class="error__spinner" [size]="'16px'"></pupa-spinner>
+    <div class="error__message">Required field</div>
+  </div>
+</ng-template>

@@ -1,0 +1,21 @@
+@use 'mixins' as *;
+@use 'functions' as *;
+
+$colorsToOverride: (
+  primary-600: #701111,
+  primary-500: #9a1919,
+  primary-400: #d21d1d,
+);
+
+@include override-colors($colorsToOverride, ':host');
+
+.usage-example {
+  margin-top: 16px;
+  color: color(neutral-6);
+}
+
+.square {
+  width: 40px;
+  height: 40px;
+  background-color: color(primary-600, alpha-60);
+}

@@ -1,0 +1,38 @@
+@use 'mixins' as *;
+@use 'functions' as *;
+
+.block {
+  display: block;
+  width: 100px;
+  height: 100px;
+  border: 2px solid transparent;
+  background-color: transparent;
+
+  @include xs() {
+    background-color: color(danger-500);
+  }
+
+  @include sm() {
+    background-color: color(warning-500);
+  }
+
+  @include md() {
+    background-color: color(primary-500);
+  }
+
+  @include lg() {
+    background-color: color(success-500);
+  }
+
+  @include xlg() {
+    border-color: color(danger-500);
+  }
+
+  @include xl() {
+    border-color: color(warning-500);
+  }
+
+  @include xxl() {
+    border-color: color(success-500);
+  }
+}

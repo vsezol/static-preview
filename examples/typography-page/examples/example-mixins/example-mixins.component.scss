@@ -1,0 +1,120 @@
+@use 'mixins' as *;
+
+.controls {
+  display: flex;
+  gap: 4rem;
+  align-items: center;
+
+  flex-wrap: wrap;
+
+  margin-bottom: 4rem;
+
+  &__control {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+  }
+}
+
+.select {
+  max-width: 60rem;
+}
+
+.active-mixin {
+  display: flex;
+  align-items: center;
+  margin: 4rem 0;
+  flex-wrap: wrap;
+}
+
+.copy-button {
+  margin-left: 2rem;
+}
+
+.info-block {
+  margin-bottom: 4rem;
+}
+
+.xxl {
+  @include font-size-xxl();
+  &.is-paragraph {
+    @include font-size-xxl(true);
+  }
+}
+
+.xl {
+  @include font-size-xl();
+  &.is-paragraph {
+    @include font-size-xl(true);
+  }
+}
+
+.l {
+  @include font-size-l();
+  &.is-paragraph {
+    @include font-size-l(true);
+  }
+}
+
+.m {
+  @include font-size-m();
+  &.is-paragraph {
+    @include font-size-m(true);
+  }
+}
+
+.s {
+  @include font-size-s();
+  &.is-paragraph {
+    @include font-size-s(true);
+  }
+}
+
+.xs {
+  @include font-size-xs();
+  &.is-paragraph {
+    @include font-size-xs(true);
+  }
+}
+
+.xxs {
+  @include font-size-xxs();
+  &.is-paragraph {
+    @include font-size-xxs(true);
+  }
+}
+
+.light {
+  @include font-type-light();
+  &.is-condensed {
+    @include font-type-light(true);
+  }
+}
+
+.regular {
+  @include font-type-regular();
+  &.is-condensed {
+    @include font-type-regular(true);
+  }
+}
+
+.medium {
+  @include font-type-medium();
+  &.is-condensed {
+    @include font-type-medium(true);
+  }
+}
+
+.semibold {
+  @include font-type-semibold();
+  &.is-condensed {
+    @include font-type-semibold(true);
+  }
+}
+
+.bold {
+  @include font-type-bold();
+  &.is-condensed {
+    @include font-type-bold(true);
+  }
+}

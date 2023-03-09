@@ -1,0 +1,30 @@
+<pupa-select class="select" [isMultiSelectionEnabled]="true" [formControl]="controlButton">
+  <pupa-select-trigger-extra-case>
+    <pupa-button-icon kind="border" icon="app-notification"></pupa-button-icon>
+  </pupa-select-trigger-extra-case>
+
+  <pupa-select-dropdown [width]="320">
+    <pupa-select-options-container>
+      <pupa-select-option *ngFor="let index of [1, 2, 3, 4, 5]" [hasCheckbox]="true" value="Option {{ index }}">
+        Option {{ index }}
+      </pupa-select-option>
+    </pupa-select-options-container>
+  </pupa-select-dropdown>
+</pupa-select>
+
+<pupa-select class="select" [isMultiSelectionEnabled]="true" [formControl]="controlTag">
+  <pupa-select-trigger-extra-case>
+    <pupa-tag [clickable]="true">
+      <pupa-icon name="app-notification"></pupa-icon>
+      some tag trigger
+    </pupa-tag>
+  </pupa-select-trigger-extra-case>
+
+  <pupa-select-dropdown [width]="320">
+    <pupa-select-options-container>
+      <pupa-select-option *ngFor="let index of [1, 2, 3, 4, 5]" [hasCheckbox]="true" value="Option {{ index }}">
+        Option {{ index }}
+      </pupa-select-option>
+    </pupa-select-options-container>
+  </pupa-select-dropdown>
+</pupa-select>

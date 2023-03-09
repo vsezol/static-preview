@@ -1,0 +1,103 @@
+<div class="actions">
+  <pupa-button class="action-button" (click)="addColumnToStart()">Add column to start</pupa-button>
+  <pupa-button class="action-button" (click)="resetColumns()">Reset columns</pupa-button>
+</div>
+
+<div class="actions">
+  <pupa-button class="action-button" (click)="changeFirstNameWidth()">Change First Name width</pupa-button>
+  <pupa-button class="action-button" (click)="resetFirstNameWidth()">Reset First Name width</pupa-button>
+</div>
+
+<div class="actions">
+  <pupa-button class="action-button" (click)="toggleAgeSorting()">Toggle Age sorting</pupa-button>
+  <pupa-button class="action-button" (click)="resetAgeSorting()">Reset Age sorting</pupa-button>
+</div>
+
+<div class="actions">
+  <pupa-button class="action-button" (click)="highlightSecondRow()">Highlight second row</pupa-button>
+  <pupa-button class="action-button" (click)="resetHighlighting()">Reset highlighting</pupa-button>
+</div>
+
+<div class="actions">
+  <pupa-button class="action-button" (click)="scrollToIndex50()">Scroll to index 50</pupa-button>
+  <pupa-button class="action-button" (click)="scrollToStart()">Scroll to start</pupa-button>
+</div>
+
+<div class="events">
+  <div>
+    <h3>TableEvents.ColumnWidthChanged:</h3>
+    <ng-container *pupaLet="columnWidthChanged$ | async; let columnId = columnId; let widthPx = widthPx">
+      columnId: {{ columnId }}, widthPx: {{ widthPx }}
+    </ng-container>
+  </div>
+
+  <div>
+    <h3>TableFeatureEvents.ColumnSortingChanged:</h3>
+    <ng-container *pupaLet="columnSortingChanged$ | async; let columnId = columnId; let sorting = sorting">
+      columnId: {{ columnId }}, sorting: {{ sorting }}
+    </ng-container>
+  </div>
+
+  <div>
+    <h3>TableEvents.ColumnHover:</h3>
+    <ng-container *pupaLet="columnHover$ | async; let columnId = columnId"> columnId: {{ columnId }} </ng-container>
+  </div>
+
+  <div>
+    <h3>TableEvents.RowHover:</h3>
+    <ng-container *pupaLet="rowHover$ | async; let rowId = rowId"> rowId: {{ rowId }} </ng-container>
+  </div>
+
+  <div>
+    <h3>TableEvents.CellClick:</h3>
+    <ng-container *pupaLet="cellClick$ | async; let columnId = columnId; let rowId = rowId; let rowType = rowType">
+      columnId: {{ columnId }}, rowId: {{ rowId }}, rowType: {{ rowType }}
+    </ng-container>
+  </div>
+
+  <div>
+    <h3>TableEvents.HorizontalScrollBarVisibilityChanged:</h3>
+    <ng-container *pupaLet="horizontalScrollBarVisibilityChanged$ | async; let isVisible = isVisible">
+      isVisible: {{ isVisible }}
+    </ng-container>
+  </div>
+
+  <div>
+    <h3>TableEvents.VerticalScrollBarVisibilityChanged:</h3>
+    <ng-container *pupaLet="verticalScrollBarVisibilityChanged$ | async; let isVisible = isVisible">
+      isVisible: {{ isVisible }}
+    </ng-container>
+  </div>
+
+  <div>
+    <h3>TableEvents.HiddenColumnIdsChanged:</h3>
+    <ng-container
+      *pupaLet="hiddenColumnIdsChanged$ | async; let leftColumnIds = leftColumnIds; let rightColumnIds = rightColumnIds"
+    >
+      leftColumnIds: {{ leftColumnIds | json }}, rightColumnIds: {{ rightColumnIds | json }}
+    </ng-container>
+  </div>
+
+  <div>
+    <h3>TableEvents.ListRangeChanged:</h3>
+    <ng-container *pupaLet="listRangeChanged$ | async; let listRange = listRange">
+      listRange: {{ listRange | json }}
+    </ng-container>
+  </div>
+</div>
+
+<div class="table">
+  <pupa-table [controller]="controller">
+    <pupa-table-column-template columnType="example">
+      <div *pupaTableBodyCellTemplate="let column = column">
+        {{ column.definition.title }}
+      </div>
+    </pupa-table-column-template>
+
+    <pupa-table-column-template columnType="age">
+      <pupa-table-body-cell *pupaTableBodyCellTemplate="let row; let column = column" [clickable]="true">
+        {{ row.data[column.definition.modelKey] }}
+      </pupa-table-body-cell>
+    </pupa-table-column-template>
+  </pupa-table>
+</div>

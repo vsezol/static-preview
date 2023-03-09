@@ -1,0 +1,29 @@
+<div class="controls-list">
+  <div class="controls-list__block">
+    <pupa-input-text [formControl]="defaultStyleControl" [placeholder]="'Enter value'"></pupa-input-text>
+  </div>
+
+  <div class="controls-list__block">
+    <pupa-input-text
+      [customStyles]="['inline']"
+      [formControl]="inlineStyleControl"
+      [placeholder]="'Enter value'"
+    ></pupa-input-text>
+  </div>
+
+  <div class="controls-list__block">
+    <pupa-input-text
+      [customStyles]="['bold']"
+      [formControl]="boldStyleControl"
+      [placeholder]="'Enter value'"
+    ></pupa-input-text>
+  </div>
+
+  <div class="controls-list__block">
+    <pupa-input-text
+      [customStyles]="['inline', 'bold']"
+      [formControl]="inlineBoldStyleControl"
+      [placeholder]="'Enter value'"
+    ></pupa-input-text>
+  </div>
+</div>

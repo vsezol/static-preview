@@ -1,0 +1,18 @@
+@use 'mixins' as *;
+
+.container,
+.breadcrumb {
+  display: flex;
+}
+
+.breadcrumb {
+  align-items: center;
+
+  &__name {
+    @include ellipsis-text-overflow;
+  }
+
+  &__spinner {
+    margin-right: 1rem;
+  }
+}

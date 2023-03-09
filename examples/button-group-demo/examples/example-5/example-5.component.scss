@@ -1,0 +1,27 @@
+@use 'demo-variables' as *;
+@use 'mixins' as *;
+@use 'functions' as *;
+
+@mixin content-border {
+  border: 1px solid semantic-color(lines-normal);
+}
+
+.button-group-content-item {
+  @include content-border;
+  margin-top: 4rem;
+  padding: 2rem;
+}
+
+.switcher-container {
+  @include content-border;
+  display: flex;
+  margin: 4rem 0;
+  padding: 2rem;
+
+  .switcher-label {
+    @include host-selector-dark-theme() {
+      color: color(neutral-1);
+    }
+    margin-right: 2rem;
+  }
+}

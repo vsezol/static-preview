@@ -1,0 +1,10 @@
+@use 'demo-variables' as *;
+@use 'mixins' as *;
+@use 'functions' as *;
+
+.button-group-content-item {
+  border: 1px solid semantic-color(lines-normal);
+
+  margin-top: 4rem;
+  padding: 2rem;
+}

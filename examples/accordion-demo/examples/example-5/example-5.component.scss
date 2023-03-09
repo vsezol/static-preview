@@ -1,0 +1,10 @@
+@use 'mixins' as *;
+
+.example-container {
+  display: flex;
+  flex-direction: column;
+
+  &__title {
+    @include font-preset-h5();
+  }
+}

@@ -1,0 +1,37 @@
+.table {
+  display: block;
+  height: 400px;
+}
+
+.name-header-cell {
+  background-color: green;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  &_current-resizable {
+    background-color: red;
+  }
+
+  &_current-draggable {
+    background-color: black;
+    border-radius: 50px;
+  }
+
+  &__dnd-text {
+    color: white;
+  }
+}
+
+.name-body-cell {
+  background-color: deepskyblue;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  &_current-resizable {
+    background-color: red;
+  }
+}

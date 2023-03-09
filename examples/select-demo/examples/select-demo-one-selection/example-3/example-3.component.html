@@ -1,0 +1,13 @@
+<pupa-select class="select" [placeholder]="'Placeholder'" [isMultiSelectionEnabled]="false" [formControl]="control">
+  <pupa-select-trigger>
+    {{ control.value }}
+  </pupa-select-trigger>
+
+  <pupa-select-dropdown>
+    <pupa-select-options-container>
+      <pupa-select-option *ngFor="let index of [1, 2, 3, 4, 5]" value="Option {{ index }}">
+        Option {{ index }}
+      </pupa-select-option>
+    </pupa-select-options-container>
+  </pupa-select-dropdown>
+</pupa-select>

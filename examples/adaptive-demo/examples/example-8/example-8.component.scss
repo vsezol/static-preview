@@ -1,0 +1,87 @@
+@use 'mixins' as *;
+@use 'functions' as *;
+
+.container {
+  margin-bottom: 4rem;
+
+  &__label {
+    color: color(neutral-60);
+  }
+}
+
+.text {
+  margin: 2rem 0;
+  font-size: 16px;
+}
+
+.text-width {
+  @include width-between-property(
+    $property: 'font-size',
+    $width-start: 1400,
+    $value-start: 20,
+    $width-end: 1500,
+    $value-end: 50,
+    $is-save-width-before: false,
+    $is-save-width-after: false
+  );
+
+  &.after {
+    @include width-between-property(
+      $property: 'font-size',
+      $width-start: 1400,
+      $value-start: 30,
+      $width-end: 1500,
+      $value-end: 50,
+      $is-save-width-before: false,
+      $is-save-width-after: true
+    );
+  }
+
+  &.before {
+    @include width-between-property(
+      $property: 'font-size',
+      $width-start: 1400,
+      $value-start: 30,
+      $width-end: 1500,
+      $value-end: 50,
+      $is-save-width-before: true,
+      $is-save-width-after: false
+    );
+  }
+}
+
+.text-height {
+  @include height-between-property(
+    $property: 'font-size',
+    $height-start: 900,
+    $value-start: 30,
+    $height-end: 1000,
+    $value-end: 50,
+    $is-save-height-before: false,
+    $is-save-height-after: false
+  );
+
+  &.after {
+    @include height-between-property(
+      $property: 'font-size',
+      $height-start: 900,
+      $value-start: 30,
+      $height-end: 1000,
+      $value-end: 50,
+      $is-save-height-before: false,
+      $is-save-height-after: true
+    );
+  }
+
+  &.before {
+    @include height-between-property(
+      $property: 'font-size',
+      $height-start: 900,
+      $value-start: 30,
+      $height-end: 1000,
+      $value-end: 50,
+      $is-save-height-before: true,
+      $is-save-height-after: false
+    );
+  }
+}

@@ -1,0 +1,55 @@
+<div class="wrapper">
+  <pupa-dnd-host
+    class="element"
+    [dndHostId]="dndHost1Id"
+    (dndMove)="processMoved1($event)"
+    (dndDrop)="processDropped1($event)"
+    [sourceType]="sourceType"
+    [targetType]="targetType"
+  >
+    <pupa-dnd-indicator
+      *ngIf="dndIndicatorTopPx1$ | async"
+      [topCoordsPx]="dndIndicatorTopPx1$ | async"
+    ></pupa-dnd-indicator>
+
+    <pupa-option
+      *ngFor="let data of dndHost1Data"
+      pupaDndItem
+      [dndItemData]="data"
+      [dndItemId]="data.itemNumber.toString()"
+      [dndItemTemplateRef]="templateRef"
+      [canBeDroppableFor]="canBeDroppableForFunc"
+    >
+      {{ data.payload }}
+    </pupa-option>
+  </pupa-dnd-host>
+
+  <pupa-dnd-host
+    class="element"
+    [dndHostId]="dndHost2Id"
+    (dndMove)="processMoved2($event)"
+    (dndDrop)="processDropped2($event)"
+    [sourceType]="sourceType"
+    [targetType]="targetType"
+  >
+    <pupa-dnd-indicator
+      *ngIf="dndIndicatorTopPx2$ | async"
+      [topCoordsPx]="dndIndicatorTopPx2$ | async"
+    ></pupa-dnd-indicator>
+
+    <pupa-option
+      *ngFor="let data of dndHost2Data"
+      pupaDndItem
+      [dndItemData]="data"
+      [dndItemId]="data.itemNumber.toString()"
+      [dndItemTemplateRef]="templateRef"
+      [canBeDroppableFor]="canBeDroppableForFunc"
+    >
+      {{ data.payload }}
+    </pupa-option>
+  </pupa-dnd-host>
+</div>
+
+<ng-template #templateRef let-data>
+  <pupa-dnd-clone-wrapper>{{ data.payload }}</pupa-dnd-clone-wrapper>
+</ng-template>

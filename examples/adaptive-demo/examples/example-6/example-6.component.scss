@@ -1,0 +1,13 @@
+@use 'mixins' as *;
+@use 'functions' as *;
+
+.block {
+  display: block;
+  width: 100px;
+  height: 100px;
+  background-color: color(primary-500);
+
+  @include gt-lg() {
+    border-radius: 50%;
+  }
+}

@@ -1,0 +1,16 @@
+@use 'mixins' as *;
+@use 'functions' as *;
+
+.block {
+  width: 100px;
+  height: 100px;
+  background-color: color(primary-500);
+
+  @include width-between($min-width: 1500, $max-width: 1600) {
+    border-radius: 50%;
+  }
+
+  @include height-between($min-height: 800, $max-height: 900) {
+    background-color: color(danger-600);
+  }
+}

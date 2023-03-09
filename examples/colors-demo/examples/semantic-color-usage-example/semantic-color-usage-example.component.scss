@@ -1,0 +1,30 @@
+@use 'functions' as *;
+
+:host {
+  display: flex;
+  flex-flow: row wrap;
+  gap: 4rem;
+}
+
+.circle {
+  width: 30rem;
+  height: 30rem;
+  content: '';
+  border-radius: 100%;
+
+  &_primary {
+    background-color: semantic-color(kind-primary-normal);
+  }
+
+  &_success {
+    background-color: semantic-color(kind-success-normal, 'none');
+  }
+
+  &_warning {
+    background-color: semantic-color(kind-warning-normal, alpha-800);
+  }
+
+  &_danger {
+    background-color: semantic-color(kind-danger-normal, 0.8);
+  }
+}

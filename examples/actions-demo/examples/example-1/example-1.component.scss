@@ -1,0 +1,43 @@
+@use 'functions' as *;
+@use 'mixins' as *;
+
+@mixin action {
+  display: block;
+  text-align: center;
+  width: 96px;
+  background: color(danger-150);
+  padding: 1rem 0;
+  height: 10rem;
+  box-sizing: border-box;
+
+  @include host-selector-dark-theme() {
+    background: color(danger-200);
+  }
+}
+
+.action-container {
+  border: 1px solid color(neutral-60);
+  padding: 2rem 8rem;
+}
+
+.action {
+  @include action();
+  margin-right: 2rem;
+}
+
+.dropdown-action {
+  @include action();
+}
+
+.dropdown-trigger {
+  height: 100%;
+  display: flex;
+  align-items: center;
+  background-color: color(primary-200);
+  box-sizing: border-box;
+  padding: 0 2rem;
+
+  @include host-selector-dark-theme() {
+    background: color(primary-500);
+  }
+}

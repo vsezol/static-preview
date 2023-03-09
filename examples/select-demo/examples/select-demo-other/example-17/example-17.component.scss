@@ -1,0 +1,32 @@
+:host {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+.select {
+  width: 80rem;
+  margin-bottom: 3rem;
+}
+
+.error {
+  display: flex;
+  align-items: center;
+
+  &__spinner {
+    margin-right: 2rem;
+  }
+}
+
+.settings {
+  display: flex;
+  align-items: center;
+
+  &__control {
+    margin-right: 2rem;
+  }
+}
+
+.scrollable {
+  max-height: inherit;
+}

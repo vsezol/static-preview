@@ -1,0 +1,12 @@
+@use 'functions' as *;
+
+.button-container {
+  display: flex;
+  flex-wrap: wrap;
+  margin: 4rem 0;
+  gap: 2rem;
+
+  .red-icon {
+    --button_icon-color: #{semantic-color(kind-danger-normal)};
+  }
+}

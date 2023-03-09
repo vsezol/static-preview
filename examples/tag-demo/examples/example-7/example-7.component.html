@@ -1,0 +1,86 @@
+<div class="tag-container">
+  <div class="trigger-container" #tag>
+    <pupa-tag [clickable]="true">
+      <pupa-tag-text>Ninja tag</pupa-tag-text>
+
+      <pupa-tag-action-button
+        *pupaTagActionButtonTemplate
+        pupaDropdown
+        #dropdown="pupaDropdown"
+        [pupaDropdownRealTriggerElement]="tag"
+      >
+        <pupa-icon [name]="(dropdown.opened$ | async) ? 'app-eye-off' : 'app-eye-on'"></pupa-icon>
+
+        <div *pupaDropdownTemplate="dropdown">Hello ninja! 🥷</div>
+      </pupa-tag-action-button>
+    </pupa-tag>
+  </div>
+
+  <div class="trigger-container" #tagPrimary>
+    <pupa-tag kind="primary" [clickable]="true">
+      <pupa-tag-text>Ninja tag</pupa-tag-text>
+
+      <pupa-tag-action-button
+        *pupaTagActionButtonTemplate
+        pupaDropdown
+        #dropdown="pupaDropdown"
+        [pupaDropdownRealTriggerElement]="tagPrimary"
+      >
+        <pupa-icon [name]="(dropdown.opened$ | async) ? 'app-eye-off' : 'app-eye-on'"></pupa-icon>
+
+        <div *pupaDropdownTemplate="dropdown">Hello ninja! 🥷</div>
+      </pupa-tag-action-button>
+    </pupa-tag>
+  </div>
+
+  <div class="trigger-container" #tagSuccess>
+    <pupa-tag kind="success" [clickable]="true">
+      <pupa-tag-text>Ninja tag</pupa-tag-text>
+
+      <pupa-tag-action-button
+        *pupaTagActionButtonTemplate
+        pupaDropdown
+        #dropdown="pupaDropdown"
+        [pupaDropdownRealTriggerElement]="tagSuccess"
+      >
+        <pupa-icon [name]="(dropdown.opened$ | async) ? 'app-eye-off' : 'app-eye-on'"></pupa-icon>
+
+        <div *pupaDropdownTemplate="dropdown">Hello ninja! 🥷</div>
+      </pupa-tag-action-button>
+    </pupa-tag>
+  </div>
+
+  <div class="trigger-container" #tagDanger>
+    <pupa-tag kind="danger" [clickable]="true">
+      <pupa-tag-text>Ninja tag</pupa-tag-text>
+
+      <pupa-tag-action-button
+        *pupaTagActionButtonTemplate
+        pupaDropdown
+        #dropdown="pupaDropdown"
+        [pupaDropdownRealTriggerElement]="tagDanger"
+      >
+        <pupa-icon [name]="(dropdown.opened$ | async) ? 'app-eye-off' : 'app-eye-on'"></pupa-icon>
+
+        <div *pupaDropdownTemplate="dropdown">Hello ninja! 🥷</div>
+      </pupa-tag-action-button>
+    </pupa-tag>
+  </div>
+
+  <div class="trigger-container" #tagWarning>
+    <pupa-tag kind="warning" [clickable]="true" [disabled]="true">
+      <pupa-tag-text>Ninja tag</pupa-tag-text>
+
+      <pupa-tag-action-button
+        *pupaTagActionButtonTemplate
+        pupaDropdown
+        #dropdown="pupaDropdown"
+        [pupaDropdownRealTriggerElement]="tagWarning"
+      >
+        <pupa-icon [name]="(dropdown.opened$ | async) ? 'app-eye-off' : 'app-eye-on'"></pupa-icon>
+
+        <div *pupaDropdownTemplate="dropdown">Hello ninja! 🥷</div>
+      </pupa-tag-action-button>
+    </pupa-tag>
+  </div>
+</div>

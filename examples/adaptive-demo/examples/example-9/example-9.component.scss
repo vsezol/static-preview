@@ -1,0 +1,23 @@
+@use 'mixins' as *;
+@use 'functions' as *;
+
+.block1,
+.block2 {
+  display: block;
+  width: 100px;
+  height: 100px;
+  background-color: color(primary-500);
+  margin-bottom: 2rem;
+}
+
+.block1 {
+  @include hover() {
+    background-color: color(danger-500);
+  }
+}
+
+.block2 {
+  &:hover {
+    background-color: color(danger-500);
+  }
+}

@@ -1,0 +1,10 @@
+.tag-container {
+  display: flex;
+  gap: 4rem;
+  flex-wrap: wrap;
+  align-items: center;
+
+  &:not(:last-child) {
+    margin-bottom: 6rem;
+  }
+}

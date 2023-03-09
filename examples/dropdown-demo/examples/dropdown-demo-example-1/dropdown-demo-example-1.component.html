@@ -1,0 +1,11 @@
+<div class="trigger-container">
+  <pupa-tag kind="primary" [clickable]="true" pupaDropdown #dropdown="pupaDropdown" [pupaDropdownDisabled]="disabled">
+    Lorem ipsum dolor sit amet, consectetur adipiscing elit
+    <pupa-icon [name]="(dropdown.opened$ | async) ? 'app-chevron-up' : 'app-chevron-down'"></pupa-icon>
+
+    <ng-container *pupaDropdownTemplate="dropdown; widthType: widthType; horizontalPosition: horizontalPosition">
+      <div>sample content</div>
+      <div>🎳</div>
+    </ng-container>
+  </pupa-tag>
+</div>

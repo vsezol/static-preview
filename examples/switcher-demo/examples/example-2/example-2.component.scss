@@ -1,0 +1,10 @@
+@use 'mixins' as *;
+
+.row {
+  margin-bottom: 4rem;
+  @include flex-container(row, center);
+
+  .label {
+    margin-left: 1rem;
+  }
+}

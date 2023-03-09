@@ -1,0 +1,9 @@
+@use 'functions' as *;
+
+.circle {
+  display: block;
+  width: 200px;
+  height: 200px;
+  background-color: color(primary-500);
+  border-radius: 50%;
+}
